@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Recipe } from './recipe';
 import { RecipeService } from './recipe.service';
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +15,36 @@ export class AppComponent implements OnInit {
   public recipes: Recipe[] = [];
   public editRecipe!: Recipe;
   public deleteRecipe!: Recipe;
+  // below code added for login & register user
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showCreatorBoard = false;
+  showEditorBoard = false;
+  username?: string;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService,
+    private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getRecipes();
+    // below code added for login user
+    // !! casting variable to boolean
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showCreatorBoard = this.roles.includes('ROLE_CREATOR');
+      this.showEditorBoard = this.roles.includes('ROLE_EDITOR');
+      this.username = user.username;
+    }
   }
-
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
+  // this is end od added code for login user
   public getRecipes(): void {
     this.recipeService.getRecipes().subscribe(
       (response: Recipe[]) => {
