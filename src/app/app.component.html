@@ -1,6 +1,34 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" style="color: white;">My Recipe App</a>
+  
+  <!-- below code added for login & register users -->
+   <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+         <a href="/home" class="nav-link" routerLink="home">Home</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showCreatorBoard">
+         <a href="/creator" class="nav-link" routerLink="creator">Creator Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showEditorBoard">
+         <a href="/editor" class="nav-link" routerLink="editor">Editor Board</a>
+      </li>
+      <li class="nav-item">
+         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User Board</a>
+      </li>
+   </ul>
+   <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+         <a href="/register" class="nav-link" routerLink="register">Sign up</a>
+      </li>
+      <li class="nav-item">
+         <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+   </ul>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
