@@ -12,13 +12,13 @@ export class AdminBoardComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getAdminBoard().subscribe(
-      data => {
+    this.userService.getAdminBoard().subscribe({
+      next: data => {
         this.content = data;
       },
-      err => {
+      error: err => {
         this.content = JSON.parse(err.error).message;
       }
-    );
+    });
   }
 }

@@ -12,13 +12,13 @@ export class CreatorBoardComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getCreatorBoard().subscribe(
-      data => {
+    this.userService.getCreatorBoard().subscribe({
+      next: data => {
         this.content = data;
       },
-      err => {
+      error: err => {
         this.content = JSON.parse(err.error).message;
       }
-    );
+    });
   }
 }

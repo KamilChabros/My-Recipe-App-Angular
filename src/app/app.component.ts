@@ -10,7 +10,8 @@ import { TokenStorageService } from './_services/token-storage.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+// was export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'myrecipeapp';
   public recipes: Recipe[] = [];
   public editRecipe!: Recipe;
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
-  // this is end od added code for login user
+  // this is end of added code for login user
   public getRecipes(): void {
     this.recipeService.getRecipes().subscribe(
       (response: Recipe[]) => {
