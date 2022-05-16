@@ -15,7 +15,6 @@ import { CreatorBoardComponent } from './creator-board/creator-board.component';
 import { EditorBoardComponent } from './editor-board/editor-board.component';
 import { UserBoardComponent } from './user-board/user-board.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { RecipeOpinionComponent } from './recipe-opinion/recipe-opinion.component';
 import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.compo
     CreatorBoardComponent,
     EditorBoardComponent,
     UserBoardComponent,
-    RecipeOpinionComponent,
     RecipeOpinionsComponent
   ],
   imports: [
