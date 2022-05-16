@@ -1,6 +1,4 @@
-
-
-export class Opinion {
+export interface Opinion {
     id: number;
     user: string; // ????
     rating: string;
