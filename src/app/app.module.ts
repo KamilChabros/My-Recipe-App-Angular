@@ -15,6 +15,8 @@ import { CreatorBoardComponent } from './creator-board/creator-board.component';
 import { EditorBoardComponent } from './editor-board/editor-board.component';
 import { UserBoardComponent } from './user-board/user-board.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { RecipeOpinionComponent } from './recipe-opinion/recipe-opinion.component';
+import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     AdminBoardComponent,
     CreatorBoardComponent,
     EditorBoardComponent,
-    UserBoardComponent
+    UserBoardComponent,
+    RecipeOpinionComponent,
+    RecipeOpinionsComponent
   ],
   imports: [
     BrowserModule,
