@@ -16,6 +16,8 @@ export class AppComponent {
   public recipes: Recipe[] = [];
   public editRecipe!: Recipe;
   public deleteRecipe!: Recipe;
+  public commentRecipe!: Recipe;
+  public longRecipe!: Recipe;
   // below code added for login & register user
   private roles: string[] = [];
   isLoggedIn = false;
@@ -128,6 +130,14 @@ export class AppComponent {
     if (mode === 'delete') {
       this.deleteRecipe = recipe;
       button.setAttribute('data-target', '#deleteRecipeModal');
+    }
+    if (mode === 'comments') {
+      this.commentRecipe = recipe;
+      button.setAttribute('data-target', '#commentsModal')
+    }
+    if (mode === 'recipe') {
+      this.longRecipe = recipe;
+      button.setAttribute('data-target', '#recipeModal');
     }
     container?.appendChild(button);
     button.click();
