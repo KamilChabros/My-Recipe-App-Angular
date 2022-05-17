@@ -1,12 +1,24 @@
+<h2>Users opinions</h2>
+
 <div *ngFor="let opinion of opinions">
     <div fxLayout="row" class="opinion-container">
-        <div fxFlex="30%" class="opinion-left">
-            <p><b>{{ opinion.user }}</b></p>
+        <div fxFlex="20%" class="opinion-left">
+            <span><b>{{ opinion.user }}</b></span>
             <div>{{ opinion.date }}</div>
         </div>
-        <div fxFlex="70%" class="opinion-right">
-            <div class="header">{{ opinion.rating }}</div>
+        <div fxFlex="80%" class="opinion-right">
+            <div class="header" fxLayoutAlign="left center">
+                <div fxLayout="row" fxLayoutAlign="left center">
+                    <div class="icon">
+                        <mat-icon *ngIf="opinion.rating == 'OK'" inline="true">thumb_up</mat-icon>
+                        <span *ngIf="opinion.rating == 'OK'"> Delicious!</span>
+                        <mat-icon *ngIf="opinion.rating == 'NOK'" inline="true">thumb_down</mat-icon>
+                        <span *ngIf="opinion.rating == 'NOK'"> So-so</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opinion-content">
+                <p>{{ opinion.content }}</p>
+            </div>
         </div>
-        <div>{{ opinion.content }}</div>
     </div>
-</div>

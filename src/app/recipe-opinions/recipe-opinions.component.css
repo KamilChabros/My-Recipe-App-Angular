@@ -1,12 +1,23 @@
 .header {
-	background-color:blue;
+	background-color:darkcyan;
 	color: white;
+	height: 40px;
+	padding: 10px;
 }
 .opinion-container {
+	padding-left: 12px;
+	margin-top: 20px;
 	width: 70%;
+	background-color: aliceblue;
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-	padding: 12px;
 }
-.opinion-left, opinion-right {
-	padding: 12px;
+.opinion-left {
+	padding-top: 12px;
+	padding-left: 12px;
+}
+.icon {
+	font-size: 20px;
+}
+.opinion-header-text {
+	padding-right: 10px;
 }
