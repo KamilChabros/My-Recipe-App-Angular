@@ -84,13 +84,13 @@
             </ul>
             <div class="card-body">
                <div class="float-right btn-group btn-group-sm">
-                  <a (click)="onOpenModal(recipe, 'recipe')" class="btn btn-primary tooltips" data-placement="top"
+                  <a (click)="onOpenModal(recipe, 'recipe')" matTooltip="Full recipe of dish" class="btn btn-primary tooltips" data-placement="top"
                      data-toggle="tooltip" data-original-title="Recipe"><i class="fa fa-book"></i> </a>
-                  <a (click)="onOpenModal(recipe, 'comments')" class="btn btn-secondary tooltips" data-placement="top"
+                  <a (click)="onOpenModal(recipe, 'comments')" matTooltip="Comments here" class="btn btn-secondary tooltips" data-placement="top"
                      data-toggle="tooltip" data-original-title="Comments"><i class="fa fa-comments"></i> </a>
-                  <a (click)="onOpenModal(recipe, 'edit')" class="btn btn-primary tooltips" data-placement="top"
+                  <a (click)="onOpenModal(recipe, 'edit')" matTooltip="Here You can edit recipe" class="btn btn-primary tooltips" data-placement="top"
                      data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                  <a (click)="onOpenModal(recipe, 'delete')" class="btn btn-secondary tooltips" data-placement="top"
+                  <a (click)="onOpenModal(recipe, 'delete')" matTooltip="Here You can delete recipe" class="btn btn-secondary tooltips" data-placement="top"
                      data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
                </div>
                <!-- <ul class="social-links list-inline mb-0">
@@ -248,7 +248,7 @@
 </div>
 
 <!-- Recipe Modal -->
-<div matTooltip="Full recipe of dish" class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel"
+<div class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel"
    aria-hidden="true">
    <div class="modal-dialog" role="document">
       <div class="modal-content">

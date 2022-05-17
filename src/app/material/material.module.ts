@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
-
+const MaterialComponnets = [
+  MatTooltipModule
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [MaterialComponnets], 
+  exports: [MaterialComponnets]
 })
 export class MaterialModule { }

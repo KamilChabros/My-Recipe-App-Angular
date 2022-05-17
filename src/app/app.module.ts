@@ -16,6 +16,8 @@ import { EditorBoardComponent } from './editor-board/editor-board.component';
 import { UserBoardComponent } from './user-board/user-board.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.component';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [RecipeService, authInterceptorProviders],
   bootstrap: [AppComponent]
