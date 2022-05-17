@@ -1,8 +1,12 @@
 <div *ngFor="let opinion of opinions">
-    <div fxLayout="row" class="mat-elevation-z4">
-    <div>
-        <p>{{ opinion.user }}</p>
-    </div>
+    <div fxLayout="row" class="opinion-container">
+        <div fxFlex="30%" class="opinion-left">
+            <p><b>{{ opinion.user }}</b></p>
+            <div>{{ opinion.date }}</div>
+        </div>
+        <div fxFlex="70%" class="opinion-right">
+            <div class="header">{{ opinion.rating }}</div>
+        </div>
         <div>{{ opinion.content }}</div>
     </div>
 </div>
