@@ -1,7 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Opinion } from './model/Opinions';
 import { Recipe } from './recipe';
+import { RecipeOpinionsService } from './recipe-opinions/recipe-opinions.service';
 import { RecipeService } from './recipe.service';
 import { TokenStorageService } from './_services/token-storage.service';
 

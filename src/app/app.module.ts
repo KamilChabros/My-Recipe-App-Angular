@@ -18,6 +18,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { RecipeOpinionsComponent } from './recipe-opinions/recipe-opinions.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeOpinionsService } from './recipe-opinions/recipe-opinions.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [RecipeService, authInterceptorProviders],
+  providers: [RecipeService, RecipeOpinionsService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

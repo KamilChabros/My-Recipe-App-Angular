@@ -1,6 +1,6 @@
 export interface Opinion {
     id: number;
-    user: string; // ????
+    username: string; // ????
     rating: string;
     content: string;
     date: string;
