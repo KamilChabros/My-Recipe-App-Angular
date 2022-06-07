@@ -16,4 +16,15 @@ export class RecipeOpinionsService {
   public getOpinions(): Observable<Opinion[]> {
     return this.http.get<Opinion[]> (`${this.apiServerUrl}/api/opinions/all`)
   }
+
+  // public getOpinionsByRecipeId(): Observable<Opinion[]> {
+  //   return this.http.get<Opinion[]> (`${this.apiServerUrl}/api/opinions/all`)
+  // }
+
+  public getOpinionsByRecipeId(id: number): Observable<Opinion[]> {
+    return this.http.get<Opinion[]> (`${this.apiServerUrl}/api/opinions/opinionByRecipeId/${id}`)
+  }
+  public addOpinion(id: number, opinion: Opinion): Observable<Opinion[]> {
+    return this.http.post<Opinion[]> (`${this.apiServerUrl}/api/opinions/${id}`, opinion)
+  }
 }

@@ -1,10 +1,37 @@
-<h2>Users opinions</h2>
+<!-- The title of opinions are set in Comment Modal in app compononet html -->
+<!-- <h2>Users opinions</h2> -->
 
+<!-- Form for adding opinion -->
+
+<div>
+    <div>
+        <div fxLayout="column" class="user-opinion">
+            <p>What You think about recipe?</p>
+            <mat-button-toggle-group name="fontStyle" [(ngModel)]="opinion.rating">
+                <mat-button-toggle value="OK" fxFlex="50%">
+                    <mat-icon>thumb_up</mat-icon>
+                    <span>Delicious!</span>
+                </mat-button-toggle>
+                <mat-button-toggle value="NOK" fxFlex="50%">
+                    <mat-icon>thumb_down</mat-icon>
+                    <span>So-so!</span>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Place for your opinion" [(ngModel)]="opinion.content"></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="addOpinion()">Add opinion</button>
+        </div>
+    </div>
+</div>
+
+<!-- List of opinions -->
 <div *ngFor="let opinion of opinions">
+    
     <div fxLayout="row" class="opinion-container">
         <div fxFlex="20%" class="opinion-left">
             <span><b>{{ opinion.username }}</b></span>
-            <div>{{ opinion.date }}</div>
+            <div>{{ opinion.date | date: 'yyyy-MM-dd HH:mm'}}</div>
         </div>
         <div fxFlex="80%" class="opinion-right">
             <div class="header" fxLayoutAlign="left center">

@@ -16,6 +16,7 @@ import { TokenStorageService } from './_services/token-storage.service';
 export class AppComponent {
   title = 'myrecipeapp';
   public recipes: Recipe[] = [];
+  public opinions: Opinion[] = []; // checking for printing opinions
   public editRecipe!: Recipe;
   public deleteRecipe!: Recipe;
   public commentRecipe!: Recipe;
@@ -28,11 +29,12 @@ export class AppComponent {
   showEditorBoard = false;
   username?: string;
 
-  constructor(private recipeService: RecipeService,
+  constructor(private recipeService: RecipeService, private recipeOpinionsService: RecipeOpinionsService,
     private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getRecipes();
+    // this.getOpinionsByRecipeId(recipeId:);
     // below code added for login user
     // !! casting variable to boolean
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -54,6 +56,28 @@ export class AppComponent {
     this.recipeService.getRecipes().subscribe(
       (response: Recipe[]) => {
         this.recipes = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public getOpinions(): void {
+    this.recipeOpinionsService.getOpinions().subscribe(
+      (response: Opinion[]) => {
+        this.opinions = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public getOpinionsByRecipeId(recipeId: number): void {
+    this.recipeOpinionsService.getOpinionsByRecipeId(recipeId).subscribe(
+      (response: Opinion[]) => {
+        this.opinions = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
